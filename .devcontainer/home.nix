@@ -31,7 +31,6 @@
 
   home.file.".config/nix/nix.conf".text = ''
     max-jobs = 8
-    sandbox = false
     experimental-features = nix-command flakes
   '';
 
