@@ -1,4 +1,4 @@
-FROM devcontainer:q6jniiwix2vg07w4g8h2biigiwswr0y9
+FROM xtruder/nix-devcontainer:latest
 
 ARG NIXPKGS=https://github.com/xtruder/nixpkgs/archive/xtruder-nixos-unstable.tar.gz
 ARG HOME_MANAGER=https://github.com/xtruder/home-manager/archive/nix-profiles-2-0.tar.gz
