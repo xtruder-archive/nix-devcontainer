@@ -1,0 +1,27 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1595248317,
+        "narHash": "sha256-tgMrLA+HFSlEwDuMgs8Rc0Gytqgg+5x5P4+9gN5ybOY=",
+        "owner": "xtruder",
+        "repo": "nixpkgs",
+        "rev": "695aadfabae5f4359032f003a5e4aff3c11f4589",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xtruder",
+        "ref": "xtruder-nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

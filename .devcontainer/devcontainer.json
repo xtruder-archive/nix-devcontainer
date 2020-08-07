@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
+// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/docker-existing-dockerfile
+{
+	"name": "Nix",
+	"context": ".",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "dev",
+	"remoteUser": "vscode",
+	"updateRemoteUserUID": false,
+
+	// Use 'settings' to set *default* container specific settings.json values on container create. 
+	// You can edit these settings after create using File > Preferences > Settings > Remote.
+	"settings": { 
+		// This will ignore your local shell user setting for Linux since shells like zsh are typically 
+		// not in base container images. You can also update this to an specific shell to ensure VS Code 
+		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
+		"terminal.integrated.shell.linux": "/nix/var/nix/profiles/default/bin/bash",
+		"terminal.integrated.shellArgs.linux": ["-i"]
+	},
+
+	// Uncomment the next line if you want to publish any ports.
+	// "appPort": [],
+
+	// Start the nix daemon in the background
+	//"postCreateCommand": "nohup sudo nix-daemon --daemon &",
+
+	"postStartCommand": "home-manager switch -b nix.conf",
+
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": [
+		"arrterian.nix-env-selector"
+	],
+
+	"workspaceFolder": "/home/vscode/workspace"
+}

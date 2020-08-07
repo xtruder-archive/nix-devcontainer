@@ -1,0 +1,26 @@
+version: '3'
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - USERNAME=vscode
+        - USER_UID=1002
+        - USER_GID=100
+    volumes:
+      - ..:/home/vscode/workspace:cached
+    cap_add:
+      - SYS_PTRACE
+      - NET_ADMIN
+    network_mode: bridge
+    links:
+      - "db"
+  db:
+    image: postgres
+    restart: always
+    network_mode: bridge
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app
+      POSTGRES_USER: user
